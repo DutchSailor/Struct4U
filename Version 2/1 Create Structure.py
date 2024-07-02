@@ -12,8 +12,8 @@ gridinput =  ["0 1000 1000",seqChar,"0 4x3600",seqNumber,"0"]
 #This the syntax for a gridsystem. It is the same syntax used in XFEM4U.
 
 #CONCRETE BEAM
-project.objects.append(Frame.by_startpoint_endpoint(Point(0,0,0),Point(0,14400,0),Rectangle("350x500",350,500).curve,"350x500",0,BaseConcrete))
-project.objects.append(Frame.by_startpoint_endpoint(Point(0,14400,0),Point(2000,14400,0),Rectangle("350x500",350,500).curve,"350x500",0,BaseConcrete))
+project.objects.append(Frame.by_startpoint_endpoint_rect(Point(0,0,0),Point(0,14400,0),350,500,"350x500",0,BaseConcrete))
+project.objects.append(Frame.by_startpoint_endpoint_rect(Point(0,14400,0),Point(2000,14400,0),350,500,"350x500",0,BaseConcrete))
 #Here we create 2 rectangle concrete beams. Coordinates are used an profiles.
 
 #STEEL COLUMN
@@ -52,7 +52,7 @@ project.objects.append(Panel.by_polycurve_thickness(
 #The code above is used to create a plate based on 5 coordinates. The plate has a thickness.
 
 #SEND PROJECT TO SPECKLE
-#project.toSpeckle("31d9948b31")
+project.toSpeckle("31d9948b31")
 
 #It is possible to visualize the result of this parametric structure in Speckle.
 

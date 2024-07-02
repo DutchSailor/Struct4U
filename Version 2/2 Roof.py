@@ -59,10 +59,10 @@ for j in lst2:
 # KAP DE HOEK OM
 
 #SEND TO STRUCT4U
-pathxml = "C:/TEMP/test6.xml"
+pathxml = "C:/TEMP/test8.xml"
 gridinput =  ["0 1000 1000",seqChar,"0 4x3600",seqNumber,"0"]
 
 createXFEM4UXML(project,pathxml,gridinput)
 
 project.toSpeckle("657e01486d", "My shiny commit for the Betonvereniging ;-)")
-#OpenXMLXFEM4U(pathxml)
+OpenXMLXFEM4U(pathxml)
