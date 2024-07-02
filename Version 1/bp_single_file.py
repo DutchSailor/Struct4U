@@ -17,7 +17,7 @@ from pathlib import Path
 # import ezdxf
 # from svg.path import parse_path
 # versiondate:
-#30-01-2024, 11:03:49
+#30-01-2024, 11:35:21
 
 
 
@@ -8872,6 +8872,17 @@ def process_exists(process_name):
     last_line = output.strip().split('\r\n')[-1]
     # because Fail message could be translated
     return last_line.lower().startswith(process_name.lower())
+
+def OpenXMLXFEM4U(pathxml):
+    # CHECK IF XFEM4U IS OPENED. IF NOT OPEN XFEM4U
+    if process_exists("wframe3d.exe") is True:
+        pass
+    else:
+        openXFEM4U()
+        time.sleep(15)
+
+    # WRITE DIRECTCOMMANDS TO XFEM4U, THEN XML-FILE IS OPENED IN XFEM4U
+    writeDirectCommandsfile(pathxml)
 # [!not included in BP singlefile - end]
 class Scia_Params:
     def __init__(self, id=str, name=str, layer=str, perpendicular_alignment=str, lcs_rotation=str, start_node=str, end_node=str, cross_section=str, eem_type=str, bar_system_line_on=str, ey=str, ez=str, geometry_table=str, revit_rot=None, layer_type=None, Yjustification=str, Xjustification=str):
